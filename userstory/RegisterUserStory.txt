@@ -1,0 +1,3 @@
+As a unregistered user
+I want to register on the website with my email, password and username by clicking on the register button
+So that I can be a registered user and be able to login and make purchases

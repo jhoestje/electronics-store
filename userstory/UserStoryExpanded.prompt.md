@@ -1,0 +1,1 @@
+I want to update the electronics-store with the user story in /userstory/RegisterUserStory.txt and create an output file in /userstory/RegisterUserStoryOutput.txt to add a summmary of what changed and why
