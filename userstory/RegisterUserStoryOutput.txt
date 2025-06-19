@@ -1,0 +1,31 @@
+# Register User Story Implementation Summary
+
+## User Story
+"As an unregistered user, I want to register on the website with my email, password and username by clicking on the register button, so that I can be a registered user and be able to login and make purchases."
+
+## Changes Made
+
+1. Created a new Register page (Register.tsx)
+   - Created a user-friendly registration form that collects username, email, password, and password confirmation
+   - Implemented form validation using Formik and Yup for field validation
+   - Connected to the existing backend registration API endpoint
+   - Added automatic login after successful registration for a seamless user experience
+   - Added a link to return to the login page for users who already have accounts
+
+2. Updated App.tsx
+   - Added the Register component import
+   - Added a new route for the registration page (/register)
+
+3. Modified Login.tsx
+   - Added a link to the registration page for users who don't have accounts yet
+   - Maintained consistent styling with the existing application theme
+
+## Implementation Notes
+
+- Maintained the existing theme styling to ensure a consistent user experience
+- Leveraged the existing authentication system (Redux store, API service) to integrate the registration functionality
+- Added validation for email format, password strength, and password confirmation matching
+- The registration form follows the same UI patterns as the login form for consistency
+- After successful registration, users are automatically logged in to provide a smooth onboarding experience
+
+The implementation now allows unregistered users to easily create accounts and access the full functionality of the electronics store, including making purchases.

@@ -9,27 +9,39 @@ import { loginStart, loginSuccess, loginFailure } from '../store/slices/authSlic
 
 const validationSchema = yup.object({
     username: yup.string().required('Username is required'),
-    password: yup.string().required('Password is required'),
+    email: yup.string().email('Enter a valid email').required('Email is required'),
+    password: yup.string()
+        .min(8, 'Password should be of minimum 8 characters')
+        .required('Password is required'),
+    confirmPassword: yup.string()
+        .oneOf([yup.ref('password')], 'Passwords must match')
+        .required('Confirm password is required'),
 });
 
-const Login: React.FC = () => {
+const Register: React.FC = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
     const formik = useFormik({
         initialValues: {
             username: '',
+            email: '',
             password: '',
+            confirmPassword: '',
         },
         validationSchema,
         onSubmit: async (values) => {
             dispatch(loginStart());
             try {
+                // Register the user
+                await authAPI.register(values.username, values.email, values.password);
+                
+                // After registration, log them in automatically
                 const response = await authAPI.login(values.username, values.password);
                 dispatch(loginSuccess(response.data));
                 navigate('/');
             } catch (error) {
-                dispatch(loginFailure('Invalid username or password'));
+                dispatch(loginFailure('Registration failed. The username or email might already be in use.'));
             }
         },
     });
@@ -46,7 +58,7 @@ const Login: React.FC = () => {
             >
                 <Paper elevation={3} sx={{ p: 4, width: '100%' }}>
                     <Typography component="h1" variant="h5" align="center" gutterBottom>
-                        Login
+                        Register
                     </Typography>
                     <form onSubmit={formik.handleSubmit}>
                         <TextField
@@ -63,6 +75,17 @@ const Login: React.FC = () => {
                         <TextField
                             fullWidth
                             margin="normal"
+                            id="email"
+                            name="email"
+                            label="Email Address"
+                            value={formik.values.email}
+                            onChange={formik.handleChange}
+                            error={formik.touched.email && Boolean(formik.errors.email)}
+                            helperText={formik.touched.email && formik.errors.email}
+                        />
+                        <TextField
+                            fullWidth
+                            margin="normal"
                             id="password"
                             name="password"
                             label="Password"
@@ -72,17 +95,29 @@ const Login: React.FC = () => {
                             error={formik.touched.password && Boolean(formik.errors.password)}
                             helperText={formik.touched.password && formik.errors.password}
                         />
+                        <TextField
+                            fullWidth
+                            margin="normal"
+                            id="confirmPassword"
+                            name="confirmPassword"
+                            label="Confirm Password"
+                            type="password"
+                            value={formik.values.confirmPassword}
+                            onChange={formik.handleChange}
+                            error={formik.touched.confirmPassword && Boolean(formik.errors.confirmPassword)}
+                            helperText={formik.touched.confirmPassword && formik.errors.confirmPassword}
+                        />
                         <Button
                             type="submit"
                             fullWidth
                             variant="contained"
                             sx={{ mt: 3, mb: 2 }}
                         >
-                            Login
+                            Register
                         </Button>
                         <Box textAlign="center">
-                            <Link href="/register" variant="body2">
-                                Don't have an account? Register here
+                            <Link href="/login" variant="body2">
+                                Already have an account? Sign in
                             </Link>
                         </Box>
                     </form>
@@ -92,4 +127,4 @@ const Login: React.FC = () => {
     );
 };
 
-export default Login;
+export default Register;
