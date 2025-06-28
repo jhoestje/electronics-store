@@ -25,6 +25,17 @@ export const authAPI = {
         api.post('/auth/register', { username, email, password }),
 };
 
+// Direct export of auth functions for easier use
+export const login = async (credentials: { username: string, password: string }) => {
+    const response = await api.post('/auth/login', credentials);
+    return response.data;
+};
+
+export const register = async (userData: { username: string, email: string, password: string }) => {
+    const response = await api.post('/auth/register', userData);
+    return response.data;
+};
+
 export const productAPI = {
     getAll: () => api.get<Product[]>('/products'),
     getById: (id: number) => api.get<Product>(`/products/${id}`),

@@ -1,0 +1,73 @@
+# Registration Feature Implementation Summary
+
+## Changes Made
+
+### Backend Changes
+1. **Enhanced AuthService**:
+   - Added robust password validation with the following requirements:
+     - At least 8 characters
+     - At least one uppercase letter
+     - At least one lowercase letter
+     - At least one number
+     - At least one special character
+   - Improved error handling with specific exception classes
+
+2. **Created New Exception Classes**:
+   - `ResourceExistsException`: For handling duplicate username/email scenarios
+   - `InvalidPasswordException`: For password validation failures
+   - `ErrorResponse`: For standardized error response format
+
+3. **Added Global Exception Handler**:
+   - Created `GlobalExceptionHandler` to provide consistent error responses
+   - Added specific handlers for validation errors
+
+4. **Integration Tests**:
+   - Implemented comprehensive integration tests covering all scenarios from the requirements:
+     - Successful registration
+     - Username uniqueness validation
+     - Email uniqueness validation
+     - Required field validation
+     - Password strength validation
+     - Verifying newly registered users can login
+     - Verifying users are assigned the CUSTOMER role by default
+
+### Frontend Changes
+1. **Created Registration Page**:
+   - Built a new Register.tsx component with form validation
+   - Used react-hook-form for form management
+   - Implemented client-side validation matching backend requirements
+   - Added error handling and user feedback
+
+2. **Updated API Service**:
+   - Added dedicated register function
+   - Improved error handling
+
+3. **Updated Routes and Navigation**:
+   - Added Register route in App.tsx
+   - Added Register link in the navigation bar
+
+4. **Updated Auth State Management**:
+   - Added setCredentials action to handle registration success
+
+## Why These Changes Were Made
+
+1. **Security Improvements**:
+   - Password strength requirements protect users from weak passwords
+   - Proper validation on both client and server sides prevents security vulnerabilities
+
+2. **User Experience**:
+   - Clear error messages help users understand requirements
+   - Client-side validation provides immediate feedback
+   - Consistent UI styling maintains the application's aesthetic
+
+3. **Code Quality**:
+   - Dedicated exception classes improve code organization
+   - Comprehensive test coverage ensures reliability
+   - Proper error handling makes the application more robust
+
+4. **Feature Completeness**:
+   - Implementation satisfies all requirements in the user story
+   - All test scenarios pass successfully
+
+## Results
+The implementation now allows users to register on the website with their email, password, and username. The registration process includes proper validation, error handling, and user feedback. Upon successful registration, users are assigned the CUSTOMER role and can immediately login with their credentials.
