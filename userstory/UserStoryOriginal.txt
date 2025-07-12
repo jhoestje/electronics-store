@@ -1,3 +1,0 @@
-As a buyer
-I want to see a list of electronic products with an image, description, and price on the Featured Products page
-So that I can make a decision if I want to buy a product
