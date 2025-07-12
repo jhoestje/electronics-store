@@ -2,7 +2,15 @@
 
 A POC project that represents an online electronics store to prove out Agentic Driven Development ideas.
 
+Main branch is the baseline code used for repeating the process.  The other branches are the results of running the agentic tools with different scenarios.
+
 Using an agentic IDE or other agentic tools, the user will be able to provide the prompt in UserStoryExpanded.prompt.md and the agentic tools will generate the code and tests based on the prompt.  A user story and test feature file will be the inputs to the agentic tool.
+
+### Branches
+user-story-add-user-registration branch- agentic produced implementation of a user registration user story
+
+user-story-add-user-registration-with-tests branch- agentic produced implementation of a user registration user story with tests
+
 
 A full-stack e-commerce application for an electronics store, featuring secure user authentication, product catalog management, shopping cart functionality, and administrative capabilities.
 
