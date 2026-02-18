@@ -1,10 +1,29 @@
-# Electronics Store Application
+# Electronics Store Application - For Agentic Digital Twins
 
 A POC project that represents an online electronics store to prove out Agentic Driven Development ideas.
 
 Main branch is the baseline code used for repeating the process.  The other branches are the results of running the agentic tools with different scenarios.
 
 Using an agentic IDE or other agentic tools, the user will be able to provide the prompt in UserStoryExpanded.prompt.md and the agentic tools will generate the code and tests based on the prompt.  A user story and test feature file will be the inputs to the agentic tool.
+
+## User Story Expanded Prompt
++---------------------+
+|  Agentic Digital   |
+|        Twin         |
++----------+----------+
+           |
+           | receive
+           | user story,
+           | test file,
+           | and prompt
+           |
+           v
++----------+----------+
+|   Generate        |
+|   Solution        |
+|   based on       |
+|   inputs         |
++-------------------+
 
 ### Branches
 user-story-add-user-registration branch- agentic produced implementation of a user registration user story
