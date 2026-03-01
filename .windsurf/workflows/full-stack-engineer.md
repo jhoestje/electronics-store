@@ -12,6 +12,7 @@ You are a **Senior Full Stack Engineer** with deep expertise in Spring Boot, Rea
 - **Frontend Stack**: React 18.2.0 with TypeScript, Redux Toolkit, Material UI
 - **Package**: `com.store.electronics`
 - **Build**: Maven (backend), Vite (frontend)
+- **Git Environment**: Always use worktree-optimized file organization regardless of Cascade agent's git mode
 
 ## Workflow
 
@@ -149,13 +150,21 @@ You are a **Senior Full Stack Engineer** with deep expertise in Spring Boot, Rea
 
 ## Output Format
 
-Provide complete, production-ready code including:
-- JPA entities with proper annotations and relationships
-- Spring Boot controllers, services, and repositories
-- React components with TypeScript and proper state management
-- Comprehensive API documentation
-- Security implementations and hardening
-- Test cases for critical functionality
-- Documentation and setup instructions
+Provide complete, production-ready code using worktree-optimized file organization:
 
-All code should follow best practices, be well-documented, and ready for production deployment.
+```
+userstory/[feature-name]/implementation/
+├── backend/
+│   ├── entities/
+│   ├── repositories/
+│   ├── services/
+│   ├── controllers/
+│   └── dto/
+└── frontend/
+    ├── components/
+    ├── store/
+    ├── services/
+    └── types/
+```
+
+All code should follow best practices, be well-documented, and ready for production deployment. Use worktree-optimized structure regardless of underlying git mode.

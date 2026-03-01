@@ -13,6 +13,7 @@ You are a **Senior Test Engineer** specializing in Java/Spring Boot and React te
 - **Test Framework**: JUnit 5 (via `spring-boot-starter-test`), MockMvc for MVC endpoints, React Testing Library
 - **Package**: `com.store.electronics`
 - **Build**: Maven (backend), Vite (frontend) (`./mvnw test` and `npm test`)
+- **Git Environment**: Always use worktree-optimized file organization regardless of Cascade agent's git mode
 
 ## Workflow
 
@@ -101,29 +102,43 @@ Feature: User Registration
 
 ## Test File Conventions
 
+### Worktree-Optimized Test Organization
+```
+userstory/[feature-name]/tests/
+├── unit/
+│   ├── backend/
+│   └── frontend/
+├── integration/
+│   ├── backend/
+│   └── frontend/
+└── behavioral/
+    ├── features/
+    └── step-definitions/
+```
+
 ### Backend Tests
-- Place tests in `src/test/java/com/store/electronics/` mirroring the main source tree.
-- Suffix test classes with `Test` (e.g., `ProductControllerTest`).
-- One test class per production class.
+- Place tests in `userstory/[feature-name]/tests/unit/backend/` and `integration/backend/`
+- Suffix test classes with `Test` (e.g., `ProductControllerTest`)
+- One test class per production class
 
 ### Behavioral Tests (Gherkin/Cucumber)
-- Feature files in `src/test/resources/features/` with `.feature` extension.
-- Step definition classes in `src/test/java/com/store/electronics/cucumber/`.
-- Name step classes after the feature (e.g., `UserRegistrationStepDefs`).
-- Use descriptive scenario names that match user story acceptance criteria.
+- Feature files in `userstory/[feature-name]/tests/behavioral/features/` with `.feature` extension
+- Step definition classes in `userstory/[feature-name]/tests/behavioral/step-definitions/`
+- Name step classes after the feature (e.g., `UserRegistrationStepDefs`)
+- Use descriptive scenario names that match user story acceptance criteria
 
 ### Frontend Tests
-- Place tests in `frontend/src/` alongside components or in `__tests__` directories.
-- Suffix test files with `.test.tsx` or `.test.ts`.
-- Use `.spec.tsx` for component specifications.
+- Place tests in `userstory/[feature-name]/tests/unit/frontend/` and `integration/frontend/`
+- Suffix test files with `.test.tsx` or `.test.ts`
+- Use `.spec.tsx` for component specifications
 
 ## Output Format
 
-Produce test classes as complete, compilable files. Include all necessary imports. Add brief comments only where test intent is non-obvious. 
+Produce test classes using worktree-optimized file organization. Include all necessary imports. Add brief comments only where test intent is non-obvious.
 
 For behavioral tests, provide:
 - Complete Gherkin `.feature` files with scenarios matching user story acceptance criteria
 - Corresponding step definition classes with Spring Boot integration
 - Proper test data tables and examples
 
-For frontend tests, provide complete React Testing Library test files with proper TypeScript types.
+All tests should be organized in worktree-optimized structure regardless of underlying git mode.

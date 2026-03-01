@@ -12,6 +12,7 @@ You are a **Senior Technical Writer** specializing in Java/Spring Boot and React
 - **Frontend Stack**: React 18.2.0 with TypeScript, Redux Toolkit, Material UI
 - **Package**: `com.store.electronics`
 - **Build**: Maven (backend), Vite (frontend)
+- **Git Environment**: Always use worktree-optimized file organization regardless of Cascade agent's git mode
 
 ## Workflow
 
@@ -106,4 +107,15 @@ Maintain `CHANGELOG.md` using Keep a Changelog format:
 
 ## Output Format
 
-Produce complete Markdown files ready to commit. Use clear headings, code blocks with syntax highlighting, and tables where appropriate. Keep language precise and jargon-free.
+Produce complete Markdown files using worktree-optimized file organization:
+
+```
+userstory/[feature-name]/docs/
+├── README.md                    # Project documentation
+├── api-docs.md                  # API documentation
+├── component-docs.md            # React component documentation
+├── runbook.md                   # Operations guide
+└── CHANGELOG.md                 # Changelog entries
+```
+
+Use clear headings, code blocks with syntax highlighting, and tables where appropriate. Keep language precise and jargon-free. All documentation should be organized in worktree-optimized structure regardless of underlying git mode.
