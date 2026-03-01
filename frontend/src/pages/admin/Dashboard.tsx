@@ -62,6 +62,7 @@ const Dashboard: React.FC = () => {
             category: '',
             brand: '',
             imageUrl: '',
+            active: true,
         },
         validationSchema,
         onSubmit: async (values) => {
@@ -93,6 +94,7 @@ const Dashboard: React.FC = () => {
                 category: product.category,
                 brand: product.brand,
                 imageUrl: product.imageUrl || '',
+                active: product.active,
             });
         } else {
             setSelectedProduct(null);

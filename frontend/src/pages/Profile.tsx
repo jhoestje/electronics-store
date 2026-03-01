@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import {
     Container,
     Paper,
@@ -15,7 +15,6 @@ import * as yup from 'yup';
 import { useSelector } from 'react-redux';
 import { RootState } from '../store';
 import { userAPI } from '../services/api';
-import { User } from '../types';
 
 const validationSchema = yup.object({
     email: yup
