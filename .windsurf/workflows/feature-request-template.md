@@ -19,51 +19,61 @@
 #### Functional Requirements
 **Question**: What specific functionality should be implemented?
 **Answer**: [User's response]
+**Source**: [User | Code Analysis | Test Analysis | Inferred from existing implementation]
 **Status**: [Answered | Pending]
 
 #### User Interface
 **Question**: How should users interact with this feature?
 **Answer**: [User's response]
+**Source**: [User | Code Analysis | Test Analysis | Inferred from existing implementation]
 **Status**: [Answered | Pending]
 
 #### Business Rules
 **Question**: What constraints or validation rules apply?
 **Answer**: [User's response]
+**Source**: [User | Code Analysis | Test Analysis | Inferred from existing implementation]
 **Status**: [Answered | Pending]
 
 #### Data Requirements
 **Question**: What data needs to be stored, processed, or displayed?
 **Answer**: [User's response]
+**Source**: [User | Code Analysis | Test Analysis | Inferred from existing implementation]
 **Status**: [Answered | Pending]
 
 #### Integration Points
 **Question**: Does this feature interact with existing systems or APIs?
 **Answer**: [User's response]
+**Source**: [User | Code Analysis | Test Analysis | Inferred from existing implementation]
 **Status**: [Answered | Pending]
 
 #### Performance Requirements
 **Question**: Are there specific performance or scalability needs?
 **Answer**: [User's response]
+**Source**: [User | Code Analysis | Test Analysis | Inferred from existing implementation]
 **Status**: [Answered | Pending]
 
 #### Security Considerations
 **Question**: Are there authentication, authorization, or data protection requirements?
 **Answer**: [User's response]
+**Source**: [User | Code Analysis | Test Analysis | Inferred from existing implementation]
 **Status**: [Answered | Pending]
 
 #### Edge Cases
 **Question**: What special scenarios or error conditions should be handled?
 **Answer**: [User's response]
+**Source**: [User | Code Analysis | Test Analysis | Inferred from existing implementation]
 **Status**: [Answered | Pending]
 
 #### Success Criteria
 **Question**: How will we know the feature is working correctly?
 **Answer**: [User's response]
+**Source**: [User | Code Analysis | Test Analysis | Inferred from existing implementation]
 **Status**: [Answered | Pending]
 
 #### Dependencies
 **Question**: Are there any prerequisites or external dependencies?
 **Answer**: [User's response]
+**Source**: [User | Code Analysis | Test Analysis | Inferred from existing implementation]
 **Status**: [Answered | Pending]
 
 ### Resume Instructions
