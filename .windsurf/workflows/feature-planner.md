@@ -87,6 +87,8 @@ This phase is handled directly by the planner (no delegation) using the `feature
 - Map dependencies and data flow.
 - Reference the feature-request.md for specific requirements and scope.
 
+**Note**: Codebase analysis results are documented in the design-document.md, not in feature-request.md. The feature-request.md focuses solely on feature requirements, user stories, and business context.
+
 #### 1b. Produce a Design Document
 
 Create `userstory/[feature-name]/design-document.md` based on the feature-request.md context:
