@@ -161,7 +161,10 @@ Delegate to the **Documentation Writer** agent to:
 ## Planning Rules
 
 1. **Always start at Phase 0** — never skip triage.
-2. **Gates are mandatory** — get user confirmation before moving to the next phase.
+2. **Gates are mandatory** — get user confirmation before moving to the next phase. Every gate must present the user with three options:
+   - **Approved** — proceed to the next phase
+   - **Changes needed** — user provides feedback before proceeding
+   - **Pause development** — save progress and pause development to resume at a later time. When paused, update the feature-request.md with current status, completed work, and next steps so the work can be resumed in a future session.
 3. **Phases can be skipped** — if a feature doesn't touch the database, skip Phase 3.
 4. **Phases can loop** — if code review finds issues, loop back to Phase 4 to fix them.
 5. **Track progress** — maintain a todo list showing current phase and completed phases.
