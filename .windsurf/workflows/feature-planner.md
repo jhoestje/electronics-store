@@ -21,14 +21,20 @@ You are a **Senior Engineering Manager and Tech Lead** who plans and coordinates
 
 ### Phase 0: Intake & Triage
 
-1. **Git Environment Strategy**: Always use worktree-optimized workflow regardless of Cascade agent's git mode:
-   - **Rationale**: Feature development benefits from isolated worktree context
-   - **Approach**: Create virtual worktree structure within userstory/ directory
-   - **Benefits**: Clean feature isolation, easier file management, parallel development support
-   - **Implementation**: Use worktree-optimized file organization even in local repository mode
+1. **Initialize Feature Request Document**: Create `userstory/[feature-name]/feature-request.md` with basic structure:
+   - Add feature name and initial metadata
+   - Set up sections for progressive updates
+   - Document git environment strategy and worktree approach:
+     - **Git Environment Strategy**: Always use worktree-optimized workflow regardless of Cascade agent's git mode
+     - **Rationale**: Feature development benefits from isolated worktree context
+     - **Approach**: Create virtual worktree structure within userstory/ directory
+     - **Benefits**: Clean feature isolation, easier file management, parallel development support
+     - **Implementation**: Use worktree-optimized file organization even in local repository mode
 
 2. Ask the user to describe the feature request in detail.
-3. **Review and Clarify Feature Request**: Analyze the user's description and ask targeted questions to clarify implementation details:
+3. **Update Feature Request Document**: Add the user's feature description to the document.
+
+4. **Review and Clarify Feature Request**: Analyze the user's description and ask targeted questions to clarify implementation details:
    - **Functional Requirements**: What specific functionality should be implemented?
    - **User Interface**: How should users interact with this feature?
    - **Business Rules**: What constraints or validation rules apply?
@@ -40,23 +46,35 @@ You are a **Senior Engineering Manager and Tech Lead** who plans and coordinates
    - **Success Criteria**: How will we know the feature is working correctly?
    - **Dependencies**: Are there any prerequisites or external dependencies?
 
-4. Classify the request by type:
+5. **Update Feature Request Document**: Add all clarification questions and answers as they are discussed.
+
+6. Classify the request by type:
    - **New Feature** — requires full lifecycle (Phases 1–5)
    - **Bug Fix** — handle within Phase 2 (full-stack-engineer)
    - **Refactor** — handle within Phase 2 (full-stack-engineer)
    - **Documentation Only** — delegate to `/documentation-writer`
-5. Identify the scope: which layers are affected (API, service, data, AI, infra)?
-6. Estimate overall complexity: **S** (1–2 hours) | **M** (half day) | **L** (1–2 days) | **XL** (multi-day).
-7. **Create Feature Request Document**: Create `userstory/[feature-name]/feature-request.md` with all Phase 0 results:
-   - Document git environment strategy and worktree approach
-   - Record the user's feature description
-   - Capture all clarification questions and answers
-   - Include classification, scope, and complexity estimates
-   - Add planning context (system stack, file organization, available agents)
-   - Set status as "Phase 0 Complete" and next phase as "Planning & Design"
-   - This file will serve as the workspace document for Phase 1 input and user review
 
-**Gate**: Feature request document created and reviewed by user before proceeding to Phase 1.
+7. **Update Feature Request Document**: Add classification results to the document.
+
+8. Identify the scope: which layers are affected (API, service, data, AI, infra)?
+9. **Update Feature Request Document**: Add scope identification to the document.
+
+10. Estimate overall complexity: **S** (1–2 hours) | **M** (half day) | **L** (1–2 days) | **XL** (multi-day).
+11. **Update Feature Request Document**: Add complexity estimate to the document.
+
+12. **Generate Business User Stories**: Create business analyst-friendly user stories describing the work to be implemented:
+    - **Epic User Story**: High-level business objective
+    - **Feature User Stories**: Specific user-facing functionality
+    - **Technical User Stories**: Implementation requirements (database, API, security, etc.)
+    - **Acceptance Criteria**: Clear success conditions for each story
+    - **Business Value**: Expected outcomes and benefits
+
+13. **Final Update Feature Request Document**: Add business user stories and complete the document with:
+    - Planning context (system stack, file organization, available agents)
+    - Status as "Phase 0 Complete" and next phase as "Planning & Design"
+    - Summary of all captured information
+
+**Gate**: Feature request document is complete and reviewed by user before proceeding to Phase 1.
 
 ### Phase 1: Planning & Design
 
