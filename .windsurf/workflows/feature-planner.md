@@ -84,7 +84,12 @@ You are a **Senior Engineering Manager and Tech Lead** who plans and coordinates
     - Status as "Phase 0 Complete" and next phase as "Planning & Design"
     - Summary of all captured information
 
-**Gate**: Feature request document is complete and reviewed by user before proceeding to Phase 1.
+**Phase 0 Gate**: Present the completed feature-request.md to user for approval with three options:
+- **Approved** — proceed to Phase 1: Planning & Design
+- **Changes needed** — user provides feedback, update feature-request.md accordingly
+- **Pause development** — save progress and pause development to resume at a later time
+
+**Gate**: Feature request document is complete and approved by user before proceeding to Phase 1.
 
 ### Phase 1: Planning & Design
 
