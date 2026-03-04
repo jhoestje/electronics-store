@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { useFormik } from 'formik';
 import * as yup from 'yup';
 import { Container, Paper, TextField, Button, Typography, Box } from '@mui/material';
@@ -80,6 +80,15 @@ const Login: React.FC = () => {
                         >
                             Login
                         </Button>
+                        
+                        <Box textAlign="center">
+                            <Typography variant="body2">
+                                Don't have an account?{' '}
+                                <Link to="/register" style={{ textDecoration: 'none' }}>
+                                    Sign up here
+                                </Link>
+                            </Typography>
+                        </Box>
                     </form>
                 </Paper>
             </Box>

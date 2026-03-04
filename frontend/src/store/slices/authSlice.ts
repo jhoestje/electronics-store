@@ -26,6 +26,20 @@ const authSlice = createSlice({
             state.isLoading = false;
             state.error = action.payload;
         },
+        registerStart: (state) => {
+            state.isLoading = true;
+            state.error = null;
+        },
+        registerSuccess: (state, action: PayloadAction<{ user: User; token: string }>) => {
+            state.isLoading = false;
+            state.user = action.payload.user;
+            state.token = action.payload.token;
+            localStorage.setItem('token', action.payload.token);
+        },
+        registerFailure: (state, action: PayloadAction<string>) => {
+            state.isLoading = false;
+            state.error = action.payload;
+        },
         logout: (state) => {
             state.user = null;
             state.token = null;
@@ -34,5 +48,5 @@ const authSlice = createSlice({
     },
 });
 
-export const { loginStart, loginSuccess, loginFailure, logout } = authSlice.actions;
+export const { loginStart, loginSuccess, loginFailure, registerStart, registerSuccess, registerFailure, logout } = authSlice.actions;
 export default authSlice.reducer;

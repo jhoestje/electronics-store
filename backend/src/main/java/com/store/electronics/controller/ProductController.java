@@ -2,7 +2,6 @@ package com.store.electronics.controller;
 
 import com.store.electronics.model.Product;
 import com.store.electronics.service.ProductService;
-import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
@@ -11,10 +10,14 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/products")
-@RequiredArgsConstructor
 @CrossOrigin(origins = "http://localhost:5173") // For development
 public class ProductController {
     private final ProductService productService;
+
+    // Explicit constructor for IDE compatibility
+    public ProductController(ProductService productService) {
+        this.productService = productService;
+    }
 
     @GetMapping
     public ResponseEntity<List<Product>> getAllProducts() {

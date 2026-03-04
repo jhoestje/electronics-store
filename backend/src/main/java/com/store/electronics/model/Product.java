@@ -33,4 +33,77 @@ public class Product {
 
     @Column(nullable = false)
     private Boolean active = true;
+
+    // Explicit getters for IDE compatibility
+    public Long getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public BigDecimal getPrice() {
+        return price;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public Integer getStockQuantity() {
+        return stockQuantity;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public String getBrand() {
+        return brand;
+    }
+
+    public Boolean getActive() {
+        return active;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setPrice(BigDecimal price) {
+        this.price = price;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
+
+    public void setStockQuantity(Integer stockQuantity) {
+        this.stockQuantity = stockQuantity;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    public void setBrand(String brand) {
+        this.brand = brand;
+    }
+
+    public void setActive(Boolean active) {
+        this.active = active;
+    }
 }

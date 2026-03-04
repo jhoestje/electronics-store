@@ -5,16 +5,19 @@ import com.store.electronics.dto.AuthResponse;
 import com.store.electronics.dto.RegisterRequest;
 import com.store.electronics.service.AuthService;
 import jakarta.validation.Valid;
-import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/auth")
-@RequiredArgsConstructor
 @CrossOrigin(origins = "http://localhost:5173")
 public class AuthController {
     private final AuthService authService;
+
+    // Explicit constructor for IDE compatibility
+    public AuthController(AuthService authService) {
+        this.authService = authService;
+    }
 
     @PostMapping("/register")
     public ResponseEntity<AuthResponse> register(@Valid @RequestBody RegisterRequest request) {
