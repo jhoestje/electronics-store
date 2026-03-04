@@ -119,3 +119,40 @@ userstory/[feature-name]/docs/
 ```
 
 Use clear headings, code blocks with syntax highlighting, and tables where appropriate. Keep language precise and jargon-free. All documentation should be organized in worktree-optimized structure regardless of underlying git mode.
+
+## Git Commit Requirement
+
+At the end of the documentation writing workflow, create a git commit with a generated message summarizing all documentation changes:
+
+### Commit Message Format
+```
+docs: [feature-name] - [brief description]
+
+[Detailed summary of documentation changes]
+
+Documentation Added:
+- [List of new documentation files]
+
+Documentation Updated:
+- [List of updated documentation files]
+
+API Documentation:
+- [List of API documentation changes]
+
+Component Documentation:
+- [List of component documentation changes]
+
+Files Changed:
+[Number] files changed, [Number] insertions(+), [Number] deletions(-)
+
+Co-authored-by: documentation-writer <cascade@windsurf.ai>
+```
+
+### Commit Process
+1. **Stage all documentation changes** - `git add .`
+2. **Generate commit message** - Based on actual documentation files created/modified
+3. **Create commit** - `git commit -m "generated message"`
+4. **Verify commit** - Ensure all documentation files are committed
+5. **Review documentation** - Confirm all documentation is accurate and complete
+
+This ensures all documentation work is properly versioned and traceable.

@@ -142,3 +142,40 @@ For behavioral tests, provide:
 - Proper test data tables and examples
 
 All tests should be organized in worktree-optimized structure regardless of underlying git mode.
+
+## Git Commit Requirement
+
+At the end of the test engineering workflow, create a git commit with a generated message summarizing all test changes:
+
+### Commit Message Format
+```
+test: [feature-name] - [brief description]
+
+[Detailed summary of test changes]
+
+Unit Tests Added:
+- [List of unit test changes]
+
+Integration Tests Added:
+- [List of integration test changes]
+
+Behavioral Tests Added:
+- [List of behavioral test changes]
+
+Test Coverage:
+- [Coverage statistics and improvements]
+
+Files Changed:
+[Number] files changed, [Number] insertions(+), [Number] deletions(-)
+
+Co-authored-by: test-engineer <cascade@windsurf.ai>
+```
+
+### Commit Process
+1. **Stage all test changes** - `git add .`
+2. **Generate commit message** - Based on actual test files created/modified
+3. **Create commit** - `git commit -m "generated message"`
+4. **Verify commit** - Ensure all test files are committed
+5. **Run tests** - Confirm all tests pass after commit
+
+This ensures all test development work is properly versioned and traceable.

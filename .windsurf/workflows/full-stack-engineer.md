@@ -168,3 +168,39 @@ userstory/[feature-name]/implementation/
 ```
 
 All code should follow best practices, be well-documented, and ready for production deployment. Use worktree-optimized structure regardless of underlying git mode.
+
+## Git Commit Requirement
+
+At the end of the full-stack engineering workflow, create a git commit with a generated message summarizing all changes:
+
+### Commit Message Format
+```
+feat: [feature-name] - [brief description]
+
+[Detailed summary of changes]
+
+Backend Changes:
+- [List of backend changes]
+
+Frontend Changes:
+- [List of frontend changes]
+
+Database Changes:
+- [List of database changes]
+
+Security Changes:
+- [List of security changes]
+
+Files Changed:
+[Number] files changed, [Number] insertions(+), [Number] deletions(-)
+
+Co-authored-by: full-stack-engineer <cascade@windsurf.ai>
+```
+
+### Commit Process
+1. **Stage all changes** - `git add .`
+2. **Generate commit message** - Based on actual changes made
+3. **Create commit** - `git commit -m "generated message"`
+4. **Verify commit** - Ensure all implementation files are committed
+
+This ensures all implementation work is properly versioned and traceable.
