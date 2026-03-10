@@ -141,8 +141,9 @@ Delegate to the **Full Stack Engineer** agent to:
 - **Frontend Integration**: Build React components with proper state management
 - **Security Implementation**: Add JWT authentication and role-based access control
 - **Code Quality**: Ensure best practices, performance optimization, and security hardening
+- **Git Commit**: Create a git commit with generated message summarizing all implementation changes
 
-**Gate**: Complete implementation with database, API, frontend, and security ready for testing.
+**Gate**: Complete implementation with database, API, frontend, and security ready for testing, and all changes committed to git.
 
 ### Phase 3: Testing → `/test-engineer`
 
@@ -153,8 +154,9 @@ Delegate to the **Test Engineer** agent to:
 - Write repository tests with `@DataJpaTest`.
 - Write frontend component tests (React Testing Library).
 - Ensure all tests pass: `./mvnw test` and `npm test`.
+- **Git Commit**: Create a git commit with generated message summarizing all test changes
 
-**Gate**: All tests pass. No untested critical paths.
+**Gate**: All tests pass. No untested critical paths. All test files committed to git.
 
 ### Phase 4: Quality Assurance
 
@@ -170,8 +172,9 @@ Delegate to the **Documentation Writer** agent to:
 - Add comprehensive API documentation
 - Create component documentation for React components
 - Update CHANGELOG.md with implementation details
+- **Git Commit**: Create a git commit with generated message summarizing all documentation changes
 
-**Gate**: Documentation is complete and accurate.
+**Gate**: Documentation is complete and accurate. All documentation files committed to git.
 
 ---
 
